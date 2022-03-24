@@ -17,5 +17,6 @@ class TestUtilsTest {
   @Test
   void checkContainsY() {
     Assertions.assertFalse(testUtils.checkContainsX("asdf"));
+    Assertions.assertTrue(testUtils.checkContainsX("asdfyde"));
   }
 }
