@@ -24,14 +24,14 @@ test {
     }
     exclude '**/*IntegrationTest*'
     useJUnitPlatform()
-//    finalizedBy jacocoTestReport
+    finalizedBy jacocoTestReport
 }
 
-//jacocoTestReport {
-//    reports {
-//        html.enabled true
-//        html.destination file("${buildDir}/reports/jacoco/jacocoReport")
-//        xml.enabled true
-//        xml.destination file("${buildDir}/reports/jacoco/coverage.xml")
-//    }
-//}
+jacocoTestReport {
+    reports {
+        html.enabled true
+        html.destination file("${buildDir}/reports/jacoco/jacocoReport")
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/coverage.xml")
+    }
+}
