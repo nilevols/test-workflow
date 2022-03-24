@@ -15,4 +15,12 @@ public class TestUtils {
     return false;
   }
 
+  public boolean checkContainsY(String text) {
+    for (char c : text.toCharArray()) {
+      if (c == 'y' || c == 'Y')
+        return true;
+    }
+    return false;
+  }
+
 }
