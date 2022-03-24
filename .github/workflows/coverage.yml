@@ -8,13 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up JDK
-          uses: actions/setup-java@v2
-          with:
-            distribution: 'temurin'
-            java-version: '11'
-            cache: 'gradle'
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
 
       - name: Run Test Coverage
         run: |
