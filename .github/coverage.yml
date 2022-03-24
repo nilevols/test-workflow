@@ -1,0 +1,31 @@
+name: Measure coverage
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK
+          uses: actions/setup-java@v2
+          with:
+            distribution: 'temurin'
+            java-version: '11'
+            cache: 'gradle'
+
+      - name: Run Test Coverage
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+
+      - name: Add coverage to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.2
+        with:
+          paths: ${{ github.workspace }}/build/reports/jacoco/coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
