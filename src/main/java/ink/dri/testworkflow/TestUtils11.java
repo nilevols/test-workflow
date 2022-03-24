@@ -5,7 +5,7 @@ package ink.dri.testworkflow;
  *
  * @author ShenYang
  */
-public class TestUtils {
+public class TestUtils11 {
 
   public boolean checkContainsX(String text) {
     for (char c : text.toCharArray()) {
